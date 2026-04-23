@@ -36,3 +36,38 @@ A robust backend built with Django REST Framework to power a sales and customer 
    ```bash
    git clone https://github.com/Xephorot/ecommerce-chatbot-api.git
    cd ecommerce-chatbot-api
+   ```
+
+2. Set up environment variables:
+   ```bash
+   cp .env-example .env
+   # Edit the .env file and add your SECRET_KEY, GEMINI_API_KEY, and TELEGRAM_BOT_TOKEN
+   ```
+
+3. Initialize the environment and database:
+   ```bash
+   chmod +x setup.sh
+   ./setup.sh
+   # Note: This script will handle virtual environment creation, dependencies, and migrations. 
+   # It will also prompt you to create a superuser for the admin panel.
+   ```
+
+4. Start the development server:
+   ```bash
+   python manage.py runserver
+   ```
+   *The API will be available at `http://localhost:8000`. Access the admin dashboard at `/admin/`.*
+
+## 🌐 API Endpoints
+
+Base URL: `http://localhost:8000` (Local) or `https://<your-render-url>.onrender.com` (Prod)
+
+* `GET /api/products/` - List all available products
+* `GET /api/categories/` - Retrieve product categories
+* `GET /api/orders/` - View customer orders
+* `GET /api/conversations/` - Chat history logs
+* `GET /api/faqs/` - Fetch frequently asked questions
+
+## 📄 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
